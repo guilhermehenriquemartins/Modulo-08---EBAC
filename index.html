@@ -14,11 +14,37 @@
       <h1>Calculadora de médias</h1>
     </header>
     <form action="calculadora.php" method="post" autocomplete="none">
-      <input type="text" name="atividade" id="iatividade">
-      <input type="number" name="nota" id="inota" min="0" max="10" step="0.5">
+      <input type="text" name="atividade" id="iatividade" placeholder="Nome da Atividade">
+      <input type="number" name="nota" id="inota" min="0" max="10" step="0.5" placeholder="Nota da Atividade">
       <input type="submit" value="Adicionar +">
     </form>
     <table>
+      <thead>
+        <tr>
+          <th>Nome da atividade</th>
+          <th>Nota</th>
+          <th>Aprovado?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Atividade A</td>
+          <td>7</td>
+          <td><img src="imagens/aprovado.png" alt="Emoji Festejando"></td>
+        </tr>
+        <tr>
+          <td>Atividade B</td>
+          <td>4</td>
+          <td><img src="imagens/reprovado.png" alt="Emoji Decepcionado"></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Nota média</td>
+          <td>11</td>
+          <td>Reprovado</td>
+        </tr>
+      </tfoot>
     </table>
   </main>
 </body>
