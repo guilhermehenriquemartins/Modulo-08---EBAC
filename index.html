@@ -13,9 +13,9 @@
       <img src="imagens/logo.png" alt="Logo">
       <h1>Calculadora de médias</h1>
     </header>
-    <form action="calculadora.php" method="post" autocomplete="none">
-      <input type="text" name="atividade" id="iatividade" placeholder="Nome da Atividade">
-      <input type="number" name="nota" id="inota" min="0" max="10" step="0.5" placeholder="Nota da Atividade">
+    <form action="calculadora.php" method="post" autocomplete="none" id="form-atividade">
+      <input type="text" name="atividade" id="nome-atividade" placeholder="Nome da Atividade">
+      <input type="number" name="nota" id="nota-atividade" min="0" max="10" step="0.5" placeholder="Nota da Atividade">
       <input type="submit" value="Adicionar +">
     </form>
     <table cellspacing="0">
@@ -27,16 +27,6 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Atividade A</td>
-          <td>7</td>
-          <td><img src="imagens/aprovado.png" alt="Emoji Festejando"></td>
-        </tr>
-        <tr>
-          <td>Atividade B</td>
-          <td>4</td>
-          <td><img src="imagens/reprovado.png" alt="Emoji Decepcionado"></td>
-        </tr>
       </tbody>
       <tfoot>
         <tr>
@@ -47,5 +37,6 @@
       </tfoot>
     </table>
   </main>
+  <script src="main.js"></script>
 </body>
 </html>
