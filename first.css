@@ -79,8 +79,6 @@ table td {
 }
 
 .resultado {
-  background-color: black;
-  color: white;
   padding: 8px;
   border-radius: 3px;
   font-weight: bold;
@@ -88,8 +86,10 @@ table td {
 
 .aprovado {
   background-color: green;
+  color: white;
 }
 
 .reprovado {
   background-color: red;
+  color: white;
 }
