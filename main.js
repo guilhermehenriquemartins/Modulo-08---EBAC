@@ -5,6 +5,7 @@ const atividades = [];
 const notas = [];
 const spanAprovado = '<span class="resultado aprovado">Aprovado</span>';
 const spanReprovado = '<span class="resultado reprovado">Reprovado</span>';
+const notaMinima = Number(prompt('Digite a nota mínima: '))
 
 let linhas = '';
 
@@ -22,17 +23,21 @@ function adicionaLinha() {
   const NomeAtividade = document.getElementById('nome-atividade')
   const NotaAtividade = document.getElementById('nota-atividade')
 
-  atividades.push(NomeAtividade.value)
-  notas.push(parseFloat(NotaAtividade.value))
+  if (atividades.includes(NomeAtividade.value)) {
+    alert(`A atividade ${NomeAtividade.value} já foi inserida`)
+  } else {
+    atividades.push(NomeAtividade.value)
+    notas.push(parseFloat(NotaAtividade.value))
 
-  let linha = `<tr>`
-  linha += `<td>${NomeAtividade.value}</td>`
-  linha += `<td>${NotaAtividade.value}</td>`
-  linha += `<td>${NotaAtividade.value >= 7 ? imgAprovado : imgReprovado}</td>`
-  linha += '</tr>'
+    let linha = `<tr>`
+    linha += `<td>${NomeAtividade.value}</td>`
+    linha += `<td>${NotaAtividade.value}</td>`
+    linha += `<td>${NotaAtividade.value >= notaMinima ? imgAprovado : imgReprovado}</td>`
+    linha += '</tr>'
 
-  linhas += linha
-
+    linhas += linha
+  }
+  
   NomeAtividade.value = ''
   NotaAtividade.value = ''
 }
@@ -48,7 +53,7 @@ function atualizaMediaFinal() {
   const notaMedia = calculaMediaFinal()
 
   document.getElementById('nota-atividade-final').innerHTML = notaMedia;
-  document.getElementById('resultado-atividade-final').innerHTML = notaMedia >= 7 ? spanAprovado : spanReprovado
+  document.getElementById('resultado-atividade-final').innerHTML = notaMedia >= notaMinima ? spanAprovado : spanReprovado
 }
 
 
